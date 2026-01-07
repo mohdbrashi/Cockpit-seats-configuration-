@@ -1,13 +1,12 @@
 let assignmentCount = 0;
 const maxAssignments = 3;
 
-function updateConfigLabel() {
-    document.getElementById("configLabel").innerText = `Configuration ${assignmentCount}`;
-}
-
 let trainees = [];
 let seatHistory = {}; // Tracks seat usage
 
+function updateConfigLabel() {
+    document.getElementById("configLabel").innerText = `Configuration ${assignmentCount}`;
+}
 
 function saveNames() {
     const n1 = document.getElementById("name1").value.trim();
@@ -22,22 +21,24 @@ function saveNames() {
     trainees = [n1, n2, n3];
 
     // Initialize seat history
+    seatHistory = {};
     trainees.forEach(name => {
         seatHistory[name] = { left: false, right: false, observer: false };
     });
 
-    // Reset counter and show Configuration 1
-    assignmentCount = 1;
+    // Start from 0, first assignSeats() will make it 1
+    assignmentCount = 0;
     updateConfigLabel();
+
+    // Assign first configuration immediately
+    assignSeats();
 
     alert("Names saved successfully");
 }
 
-
-
 function assignSeats() {
 
-    // Check BEFORE incrementing
+    // Check BEFORE incrementing: show popup when trying to go beyond maxAssignments
     if (assignmentCount >= maxAssignments) {
         const proceed = confirm("You’re about to exceed the limit. Do you want to continue?");
         if (!proceed) return;
@@ -67,23 +68,24 @@ function assignSeats() {
     // Random selection
     const left = randomPick(leftCandidates);
     const right = randomPick(rightCandidates.filter(t => t !== left));
-    const observer = randomPick(observerCandidates.filter(t => t !== left && t !== right));
+    const observer = randomPick(
+        observerCandidates.filter(t => t !== left && t !== right)
+    );
 
     // Update history
     seatHistory[left].left = true;
     seatHistory[right].right = true;
     seatHistory[observer].observer = true;
 
-    // Update UI
+    // Update UI labels
     document.getElementById("leftLabel").innerText = left;
     document.getElementById("rightLabel").innerText = right;
     document.getElementById("observerLabel").innerText = observer;
 
-    // NOW increment
+    // Increase configuration number AFTER assigning seats
     assignmentCount++;
     updateConfigLabel();
 }
-
 
 function randomPick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
