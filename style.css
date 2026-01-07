@@ -1,0 +1,146 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cockpit {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.front-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.observer-row {
+    display: flex;
+    justify-content: center;
+}
+
+.seat {
+    width: 150px;
+    height: 100px;
+    background: #d9e6f2;
+    border: 2px solid #4a6fa5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.observer {
+    width: 200px;
+}
+
+.switch-btn {
+    width: 100%;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Center cockpit image on all devices */
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Cockpit image container */
+.cockpit-image-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.cockpit-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Labels on top of the cockpit */
+.seat-label {
+    position: absolute;
+    z-index:10;
+    font-weight: bold;
+    color: #2a4d8f;
+    background: rgba(255,255,255,0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    width: 120px;
+    text-align: center;
+}
+
+/* Temporary positions — we will adjust after seeing your cockpit */
+#leftLabel { top: 610px; left: 110px; }
+#rightLabel { top: 610px; right: 110px; }
+#observerLabel { bottom: 50px; left: 29%; transform: translateX(-50%); }
+#instructorLabel { bottom: 50px; right: 100px;}
+
+.name-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 2px solid #c7d7f2;
+    border-radius: 8px;
+    outline: none;
+}
+
+.name-field:focus {
+    border-color: #4a6fa5;
+}
+
+#saveBtn {
+    width: 50%;
+    margin: 15px auto 0 auto;
+    display: block;
+}
+
+
+
+.config-label {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #b8141c;
+    text-align: center;
+}

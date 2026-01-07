@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cockpit Seat Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Run-up and Taxi Cockpit Seat Assignment</h1>
+
+    <!-- Input trainees -->
+   <div class="input-section">
+    <input id="name1" type="text" placeholder="Trainee 1" class="name-field">
+    <input id="name2" type="text" placeholder="Trainee 2" class="name-field">
+    <input id="name3" type="text" placeholder="Trainee 3" class="name-field">
+
+    <button id="saveBtn" onclick="saveNames()">Save Names</button>
+</div>
+
+    <!-- Switch button -->
+    <button class="switch-btn" onclick="assignSeats()">Next seats configuration</button>
+    <div id="configLabel" class="config-label"></div>
+</div>
+
+
+<!-- Cockpit image with labels -->
+<div class="page-center">
+    <div class="cockpit-image-container">
+        <img src="cockpit.jpg" class="cockpit-img">
+
+        <div id="leftLabel" class="seat-label">Left Seat</div>
+        <div id="rightLabel" class="seat-label">Right Seat</div>
+        <div id="observerLabel" class="seat-label">Observer</div>
+        <div id="instructorLabel" class="seat-label">Instructor</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
