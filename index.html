@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -11,19 +11,21 @@
     <h1>Run-up and Taxi Cockpit Seat Assignment</h1>
 
     <!-- Input trainees -->
-   <div class="input-section">
-    <input id="name1" type="text" placeholder="Trainee 1" class="name-field">
-    <input id="name2" type="text" placeholder="Trainee 2" class="name-field">
-    <input id="name3" type="text" placeholder="Trainee 3" class="name-field">
+    <div class="input-section">
+        <input id="name1" type="text" placeholder="Trainee 1" class="name-field">
+        <input id="name2" type="text" placeholder="Trainee 2" class="name-field">
+        <input id="name3" type="text" placeholder="Trainee 3" class="name-field">
 
-    <button id="saveBtn" onclick="saveNames()">Save Names</button>
-</div>
+        <button id="saveBtn" onclick="saveNames()">Save Names</button>
+        <button id="showInstructionsBtn" class="instruction-btn" style="display:none;">
+            Show Instructions
+        </button>
+    </div>
 
     <!-- Switch button -->
     <button class="switch-btn" onclick="assignSeats()">Next seats configuration</button>
     <div id="configLabel" class="config-label"></div>
 </div>
-
 
 <!-- Cockpit image with labels -->
 <div class="page-center">
@@ -37,6 +39,18 @@
     </div>
 </div>
 
-<script src="script.js?v=1.0"></script></body>
+<!-- REMOVE the duplicate instructionBox -->
+<!-- REMOVE the old instructionBox entirely -->
 
+<!-- POPUP MUST BE ABOVE THE SCRIPT -->
+<div id="instructionPopup" class="instruction-popup" style="display:none;">
+    <div class="popup-content">
+        <span id="closePopup" class="close-btn">×</span>
+        <div id="instructionText"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
