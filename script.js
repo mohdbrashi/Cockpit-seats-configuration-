@@ -1,3 +1,9 @@
+const instructions = {
+    1: "Your instruction for configuration 1 goes here.",
+    2: "Your instruction for configuration 2 goes here.",
+    3: "Your instruction for configuration 3 goes here."
+};
+
 let assignmentCount = 0;
 const maxAssignments = 3;
 
@@ -34,6 +40,9 @@ function saveNames() {
     assignSeats();
 
     alert("Names saved successfully");
+
+    // Show the instructions button
+    document.getElementById("showInstructionsBtn").style.display = "inline-block";
 }
 
 function assignSeats() {
@@ -85,8 +94,23 @@ function assignSeats() {
     // Increase configuration number AFTER assigning seats
     assignmentCount++;
     updateConfigLabel();
+
+    // Update popup instruction text
+    document.getElementById("instructionText").innerText = instructions[assignmentCount] || "";
 }
 
 function randomPick(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+
+/* ------------------------------
+   SHOW INSTRUCTIONS POPUP
+--------------------------------*/
+document.getElementById("showInstructionsBtn").addEventListener("click", function () {
+    document.getElementById("instructionPopup").style.display = "flex";
+    document.getElementById("instructionText").innerText = instructions[assignmentCount] || "";
+});
+
+document.getElementById("closePopup").addEventListener("click", function () {
+    document.getElementById("instructionPopup").style.display = "none";
+});
