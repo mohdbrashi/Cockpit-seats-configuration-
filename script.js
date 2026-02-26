@@ -1,7 +1,30 @@
 const instructions = {
-    1: "Your instruction for configuration 1 goes here.",
-    2: "Your instruction for configuration 2 goes here.",
-    3: "Your instruction for configuration 3 goes here."
+    1: `- Push-back facing North (N). 
+    - Turn right on L2. 
+    - Then, Turn left on TWY L. 
+    - Continue taxi on TWY L.
+    - Turn right on TXY R, HOLD SHORT RWY 34R, contact 118.50. 
+    - Return the frequency to 121.70
+    - Continue taxi on NA to enter apron 15.`,
+    2: `- Turn left on NA.
+    - Hold short RWY 34C, contact 118.50.
+    - Cross the runway. 
+    - Contact 121.70, continue taxi on TXY R. 
+    - HOLD SHORT RWY 34C, Contact 118.20.
+    - Cross the runway. 
+    - Contact 121.90, Turn left on TWY F.
+    - then, right on TXY T. 
+    - Then turn left on APRON 2. 
+    - Parking 2-7.`,
+    3: `- Push-back facing south (S).
+    - Turn left on TWY U.
+    - HOLD SHORT TXY F, contact 121.90.
+    - Turn right on TXY F, Continue Taxi on TWY F.
+    - Turn left on GE HOLD SHORT 34C, contact 118.20. 
+    - Continue taxi then turn left on TXY K. 
+    - Turn right on TXY V, contact 121.70. 
+    - Continue taxi on TXY V, then turn right on TXY L.
+    - Turn right on L2, your parking will be A4R.`
 };
 
 let assignmentCount = 0;
